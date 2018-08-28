@@ -61,6 +61,23 @@
                             </div>
                         </div>
 
+<div class="form-group row">
+    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Captcha</label>
+    <div class="col-md-6">
+        {!! NoCaptcha::renderJs() !!}
+        {!! NoCaptcha::display() !!}
+        @if ($errors->has('g-recaptcha-response')) 
+            <span class="help-block">  // у автора здесь: class="invalid-feedback" style="display:block"
+                <!-- <strong>{{ $errors->first('g-recaptcha-response') }}</strong> -->
+                <div class="g-recaptcha" data-sitekey="6LdG0GwUAAAAAA_odWy55U5FmyYLWnfuYBoYIUyq"></div>
+            </span>
+        @endif
+    </div>
+</div>
+
+
+
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
